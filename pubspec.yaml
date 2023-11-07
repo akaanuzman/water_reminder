@@ -30,3 +30,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/color/
+    - assets/lotties/
+
+flutter_gen:
+  output: lib/products/generation/
+  assets:
+    enabled: true
+
+  colors:
+    inputs:
+      - assets/color/colors.xml
