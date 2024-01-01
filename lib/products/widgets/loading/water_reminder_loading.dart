@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_declarations, omit_local_variable_types
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:water_reminder/products/generation/index.dart';
@@ -10,9 +12,11 @@ final class WRLoading {
   static Future<bool?> show({
     required BuildContext context,
   }) async {
-    return showAdaptiveDialog<bool?>(
-      barrierColor: Colors.black12,
-      barrierDismissible: false,
+    final double opacityValue = .2;
+    final bool barrierDismissible = false;
+    return showDialog<bool?>(
+      barrierColor: Colors.white.withOpacity(opacityValue),
+      barrierDismissible: barrierDismissible,
       context: context,
       builder: (context) => Lottie.asset(Assets.lotties.loading),
     );
